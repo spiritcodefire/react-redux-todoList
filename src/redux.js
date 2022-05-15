@@ -15,7 +15,7 @@ const todoSlice = createSlice({
           
           addTask: (state, action) => {
                 // {type : "ADD_TASK", payload : "aller faire à manger" }
-                 // {type : "todo/addTask", payload : "aller faire à manger" }
+                // {type : "todo/addTask", payload : "aller faire à manger" }
             const newTask = {
                 id : Date.now()  ,
                 done : false, 
@@ -23,12 +23,14 @@ const todoSlice = createSlice({
             }
             state.push(newTask)
           },
+
           toggleTask: (state, action) => {
               // {type : "toogle_task", payload : 20 }
               // {type : "todo/toogleTask", payload : 20 }
               const task = state.find(t => t.id === action.payload ); // je récupère l'id du paylad, et je cherche ma task correspondante
               task.done = !task.done // j'inverse l'info qui y est à l'interieur
           },
+          
           deleteTask: (state, action) => {
             // {type : "DELETE_TASK", payload : 20 }
             // {type : "toto/deleteTask", payload : 20 }
